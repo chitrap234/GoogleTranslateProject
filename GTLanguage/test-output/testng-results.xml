@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-10T13:13:01 CDT" name="Default suite" finished-at="2022-10-10T13:14:07 CDT" duration-ms="65874">
+    <groups>
+    </groups>
+    <test started-at="2022-10-10T13:13:01 CDT" name="Default test" finished-at="2022-10-10T13:14:07 CDT" duration-ms="65874">
+      <class name="com.translate.testPages.languageCheckTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.translate.testPages.languageCheckTest@4cc451f2]" started-at="2022-10-10T13:13:01 CDT" name="setup" finished-at="2022-10-10T13:13:03 CDT" duration-ms="1681" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="googleTranslate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.translate.testPages.languageCheckTest@4cc451f2]" started-at="2022-10-10T13:13:03 CDT" name="googleTranslate" data-provider="TranslateData" finished-at="2022-10-10T13:13:50 CDT" duration-ms="47031" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[German]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Spanish]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Demokratien]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Democracia]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleTranslate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.translate.testPages.languageCheckTest@4cc451f2]" started-at="2022-10-10T13:13:50 CDT" name="tearDown" finished-at="2022-10-10T13:14:07 CDT" duration-ms="16349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.translate.testPages.languageCheckTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,21 @@
+Framework Info
+--------------------------
+* Framework is based on Page Object Model 
+* Application Pages are stored in Page Classes
+* Test cases are in stored in Test Package.
+* POM stores all dependencies
+* TestData is stored in separate folder in TestData Package.
+* Testng.xml is to run tests as a suit.
+* XLUtils has all utilities method read Data From .xlsx file.
+
+Framework Tool Set
+------------------------
+*java -programming Language
+*Selenium WebDriver -to automate Web Application
+*Maven -Build Automation Tool
+*TestNG -TestNextGerneration Framework to Run Test.
+*Apache Poi -Data Driven Testing from .xlsx file
+*WebdriverManager- To Manage Browser Executable files
+
+
+
