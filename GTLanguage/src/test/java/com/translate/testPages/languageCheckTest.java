@@ -36,17 +36,29 @@ public class languageCheckTest {
 		driver.get("https://translate.google.com/");
 		TranslatePage translatePage = new TranslatePage(driver);
 		translatePage.clickLeftMenu();
-		translatePage.SearchBoxleft(souLan);
+		translatePage.selectGerman(souLan);
+	//	translatePage.SearchBoxleft(souLan);
 		translatePage.clickRightMenu();
-		translatePage.SearchBoxright(transLan);
+		translatePage.selectSpanish(transLan);
+		//translatePage.SearchBoxright(transLan);
 		translatePage.sendTextInTextArea(iniText);
 		translatePage.getTargetText(exptText);
 		translatePage.clickOnSwapButton();
 		translatePage.CheckSwapClickResult();
 		translatePage.clearGermanText();
-		translatePage.EnterHiAtKeyboard();
-
+		//translatePage.EnterHiAtKeyboard();
+	//	translatePage.EnterAnyWordKeyboard();
+		String myphase = "Lorem ipsum dolor";
+		
+		//calling of resuable method to pass any phase
+		translatePage.EnterAnyTextKeyboard(myphase);
+		
+		//we can pass any phase as parameter as below
+		//translatePage.EnterAnyTextKeyboard("Smart answer");
 	}
+	
+	
+	
 	
 	
 	@DataProvider(name="TranslateData")

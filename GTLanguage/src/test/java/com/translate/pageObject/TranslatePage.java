@@ -2,6 +2,8 @@ package com.translate.pageObject;
 
 
 import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -24,6 +26,10 @@ public class TranslatePage {
 	By leftMenu = By.xpath("(//*[@class='akczyd']/button/span)[1]"); 
 
 	By sourceLanguage = By.xpath("(//div[text()='German' and @class='Llmcnf'])[1]"); 
+	
+	By ListofRightDropDown=By.xpath("(//div[@class='dykxn MeCBDd j33Gae'])[1]//div[@class='qSb8Pe' ]");
+	
+	By ListofLeftDropDown=By.xpath("(//div[@class='vSUSRc' and @jsname='JpRUfc'])[2]//div[@class='qSb8Pe']");
 	
     By leftMenuSearchBox=By.xpath("(//div[@class='fMHXgc qkH7ie'])[1]//input"); 
 	
@@ -68,8 +74,32 @@ public class TranslatePage {
 			System.out.println(e.getMessage());
 		}
 	}
-
-	public void SearchBoxleft(String GermanLag) {
+	
+	
+	//this method is selecting German as language from dropdown from xls data
+	public void selectGerman(String GermanLag)
+	{
+	   try {
+		Thread.sleep(3000);
+		List<WebElement> listofLanguage=driver.findElements(ListofRightDropDown);
+		System.out.println(GermanLag);
+		for(WebElement listR :listofLanguage)
+		{
+			if(listR.getText().equals(GermanLag)){
+				listR.click();
+				break;
+			}
+		}
+		} catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	
+	//This method removed as to search German
+	/*public void SearchBoxleft(String GermanLag) {
 		try {
 			Thread.sleep(3000);
 			WebElement searchBar = driver.findElement(leftMenuSearchBox);
@@ -79,7 +109,7 @@ public class TranslatePage {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-	}
+	}*/
 
 
 	
@@ -101,7 +131,31 @@ public class TranslatePage {
 	}
 
 	
-	public void SearchBoxright(String LanSpanish ) {
+	//this method is selecting Spanish as language from dropdown from xls data
+	public void selectSpanish(String LanSpanish)
+	{
+
+	try {
+		Thread.sleep(3000);
+		List<WebElement> listofLanguageLeft=driver.findElements(ListofLeftDropDown);
+		System.out.println(LanSpanish);
+		for(WebElement listL :listofLanguageLeft)
+		{
+			if(listL.getText().equals(LanSpanish)){
+				listL.click();
+				break;
+			}
+		}
+		} catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+				
+	}
+	
+
+	//This method removed as to search Spanish
+	/*public void SearchBoxright(String LanSpanish ) {
 	
 		try {
 			Thread.sleep(3000);
@@ -117,7 +171,7 @@ public class TranslatePage {
 			
 			System.out.println(e.getMessage());
 		}
-	}
+	}*/
 
 
 	
@@ -221,24 +275,115 @@ public class TranslatePage {
 	
 	
 
+	//This is typing "Hi!"
 	
 	public void EnterHiAtKeyboard() throws InterruptedException {
 		Thread.sleep(3000);
 		try {
 			
 			driver.findElement(DirectKeyBoardbutton).click();
-
+			WebElement capletter = driver.findElement(By.id("K20"));
+			capletter.click();
 			WebElement Hletter = driver.findElement(By.id("K72"));
 			Hletter.click();
+			capletter.click();
 			WebElement Iletter = driver.findElement(By.id("K73"));
 			Iletter.click();
 			WebElement keyPatterenChange = driver.findElement(By.id("K16"));
 			keyPatterenChange.click();
 			WebElement exclamatoryMark = driver.findElement(By.id("K49"));
+			Thread.sleep(3000);
 			exclamatoryMark.click();
+			Thread.sleep(5000);
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	
+	// This method to type "Lorem ipsum dolor" without reusable method
+	
+		public void EnterAnyWordKeyboard() throws InterruptedException {
+			Thread.sleep(3000);
+			try {			
+				driver.findElement(DirectKeyBoardbutton).click();
+				WebElement capletter = driver.findElement(By.id("K20"));
+				capletter.click();
+				WebElement lletter = driver.findElement(By.id("K76"));
+				lletter.click();
+				capletter.click();
+				WebElement oletter = driver.findElement(By.id("K79"));
+				oletter.click();
+				WebElement rletter = driver.findElement(By.id("K82"));
+				rletter.click();
+				WebElement eletter = driver.findElement(By.id("K69"));
+				Thread.sleep(3000);
+				eletter.click();
+				WebElement mletter = driver.findElement(By.id("K77"));
+				mletter.click();
+				WebElement spacebutton = driver.findElement(By.id("K32"));
+				spacebutton.click();
+				WebElement iletter = driver.findElement(By.id("K73"));
+				iletter.click();
+				WebElement pletter = driver.findElement(By.id("K80"));
+				pletter.click();
+				WebElement sletter = driver.findElement(By.id("K83"));
+				sletter.click();
+				WebElement uletter = driver.findElement(By.id("K85"));
+				Thread.sleep(3000);
+				uletter.click();
+				mletter.click();
+				spacebutton.click();
+				WebElement dletter = driver.findElement(By.id("K68"));
+				dletter.click();
+				oletter.click();
+				WebElement llletter = driver.findElement(By.id("K76"));
+				llletter.click();
+				oletter.click();
+				rletter.click();
+				Thread.sleep(5000);
+			} catch (Exception e) {
+
+				System.out.println(e.getMessage());
+			}
+		}
+		
+	
+
+				//passing Any phase by reusable function using screen keyboard
+		
+				public void EnterAnyTextKeyboard(String phase) throws InterruptedException {
+					Thread.sleep(3000);
+					try {			
+						WebElement sceKey= driver.findElement(DirectKeyBoardbutton);
+						sceKey.click();
+						for(int i=0;i<phase.length();i++) {
+							
+							if(phase.charAt(i)== ' ') {
+								WebElement spacebutton = driver.findElement(By.id("K32"));
+								spacebutton.click();
+							}
+							else if(phase.charAt(i)>= 'A' && phase.charAt(i)<= 'Z')
+							{
+								WebElement capletter = driver.findElement(By.id("K20"));
+								capletter.click();
+								WebElement letter = driver.findElement(By.xpath("//span[text()= '"+phase.charAt(i)+"']"));
+								letter.click();
+								capletter.click();
+							}
+	
+							else {
+			
+							WebElement letter = driver.findElement(By.xpath("//span[text()= '"+phase.charAt(i)+"']"));
+							letter.click();
+							}
+						}
+			
+						Thread.sleep(5000);
+					} catch (Exception e) {
+
+						System.out.println(e.getMessage());
+					}
+				}
 }
